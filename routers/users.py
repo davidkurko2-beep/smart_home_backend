@@ -47,7 +47,7 @@ def update_user(user_id:int,user_data:UserUpdate, db:Session=Depends(get_db)):
         raise HTTPException(status_code=404, detail="User not found")
     user.email = user_data.email
     user.password = user_data.password
-    user.full_name=user_data.full-name
+    user.full_name=user_data.full_name
     db.delete(user)
     db.commit()
     return user
