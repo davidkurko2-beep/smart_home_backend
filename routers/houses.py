@@ -38,7 +38,7 @@ def get_house(house_id: int, db:Session=Depends(get_db)):
     return house
 
 @router.put("/{house_id}")
-def update_house(house_id: int, house: HouseUpdate, db:Session=Depends(get_db)):
+def update_house(house_id: int, house_data: HouseUpdate, db:Session=Depends(get_db)):
     house = db.query(House).filter(House.id == house_id).first()
     if house is None:
         raise HTTPException(status_code=404, detail = "House not found")
@@ -47,3 +47,11 @@ def update_house(house_id: int, house: HouseUpdate, db:Session=Depends(get_db)):
     db.commit()
     db.refresh(house)
     return house
+@router.delete("/{house_id}")
+def delete_house(house_id:int, db:Session=Depends(get_db)):
+    house=db.query(House).filter(House.id == house_id).first()
+    if house is None:
+        raise HTTPException(status_code=404, detail="User not found")
+    db.delete(house)
+    db.commit()
+    return {"message": "User Deleted"}
