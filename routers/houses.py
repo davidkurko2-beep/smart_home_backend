@@ -54,4 +54,4 @@ def delete_house(house_id:int, db:Session=Depends(get_db)):
         raise HTTPException(status_code=404, detail="User not found")
     db.delete(house)
     db.commit()
-    return {"message": "User Deleted"}
+    return {"message": "House Deleted"}
