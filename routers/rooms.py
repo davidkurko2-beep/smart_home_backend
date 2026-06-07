@@ -38,7 +38,6 @@ def update_room(room_id: int, room_data: RoomUpdate, db:Session=Depends(get_db))
     if room is None:
         raise HTTPException(status_code=404, detail = "House not found")
     room.name = room_data.name
-    room.address = room_data.addres
     db.commit()
     db.refresh(room)
     return room
