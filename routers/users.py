@@ -1,5 +1,4 @@
 from http.client import HTTPException
-from tkinter.font import names
 
 from fastapi.params import Depends
 from fastapi import APIRouter
@@ -7,7 +6,7 @@ from sqlalchemy.orm import Session
 
 from database import get_db
 from models.user import User
-from schemas.user import UserCreate
+from schemas.user import UserCreate, UserUpdate
 
 router=APIRouter(prefix="/users", tags=["Users"])
 @router.post("/")
