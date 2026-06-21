@@ -31,18 +31,18 @@ def create_scenario(scenario: ScenarioCreate,
 
 @router.get("/")
 def get_scenarios(db:Session=Depends(get_db),current_user:User=Depends(get_current_user)):
-    scenarios = db.query(Scenario).filter(Scenario.user_id == current_user.id).all()
+    scenarios = db.query(Scenario).join(House).filter(House.user_id== current_user.id).all()
     return scenarios
 @router.get("/{scenario_id}")
 def get_scenario(scenario_id: int, db:Session=Depends(get_db),current_user:User=Depends(get_current_user)):
-    scenario = db.query(Scenario).filter(Scenario.id == scenario_id, Scenario.user_id == current_user.id).first()
+    scenario = db.query(Scenario).join(House).filter(House.user_id== current_user.id).first()
     if scenario is None:
         raise HTTPException(status_code=404, detail="Scenario not found")
     return scenario
 
 @router.put("/{scenario_id}")
-def update_scenario(scenario_id: int, scenario_data: ScenarioUpdate,db:Session=Depends(get_db),current_user:User=Depends(get_current_user) ):
-    scenario = db.query(Scenario).filter(Scenario.id == scenario_id, Scenario.user_id == current_user.id).first()
+def update_scenario(scenario_id: int, scenario_data: ScenarioUpdate,db:Session=Depends(get_db),current_user:User=Depends(get_current_user)):
+    scenario = db.query(Scenario).join(House).filter(House.user_id== current_user.id).first()
     if scenario is None:
         raise HTTPException(status_code=404, detail="Scenario not found")
     scenario.name=scenario_data.name
@@ -63,7 +63,7 @@ def toggle_scenario(scenario_id: int, scenario_data: ScenarioUpdate,db:Session=D
     return scenario
 @router.delete("/{scenario_id}")
 def delete_scenario(scenario_id: int,db:Session=Depends(get_db),current_user:User=Depends(get_current_user)):
-    scenario = db.query(Scenario).filter(Scenario.id == scenario_id, Scenario.user_id == current_user.id).first()
+    scenario = db.query(Scenario).join(House).filter(House.user_id== current_user.id).first()
     if scenario is None:
         raise HTTPException(status_code=404, detail="Scenario not found")
     db.delete(scenario)

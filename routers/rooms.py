@@ -27,18 +27,18 @@ def create_room(room: RoomCreate,
 
 @router.get("/")
 def get_rooms(db:Session=Depends(get_db),current_user:User=Depends(get_current_user)):
-    rooms = db.query(Room).filter(Room.user_id == current_user.id).all()
+    rooms = db.query(Room).join(House).filter(House.user_id== current_user.id).all()
     return rooms
 @router.get("/{room_id}")
 def get_room(room_id: int, db:Session=Depends(get_db),current_user:User=Depends(get_current_user)):
-    room = db.query(Room).filter(Room.id == room_id,Room.user_id==current_user.id).first()
+    room = db.query(Room).join(House).filter(House.user_id== current_user.id).first()
     if room is None:
         raise HTTPException(status_code=404, detail="Room not found")
     return room
 
 @router.put("/{room_id}")
 def update_room(room_id: int, room_data: RoomUpdate,db:Session=Depends(get_db),current_user:User=Depends(get_current_user)):
-    room = db.query(Room).filter(Room.id == room_id,Room.user_id==current_user.id).first()
+    room = db.query(Room).join(House).filter(House.user_id== current_user.id).first()
     if room is None:
         raise HTTPException(status_code=404, detail="Room not found")
     room.name = room_data.name
@@ -47,7 +47,7 @@ def update_room(room_id: int, room_data: RoomUpdate,db:Session=Depends(get_db),c
     return room
 @router.delete("/{room_id}")
 def delete_room(room_id: int,db:Session=Depends(get_db),current_user:User=Depends(get_current_user)):
-    room = db.query(Room).filter(Room.id == room_id,Room.user_id==current_user.id).first()
+    room = db.query(Room).join(House).filter(House.user_id== current_user.id).first()
     if room is None:
         raise HTTPException(status_code=404, detail="Room not found")
     db.delete(room)

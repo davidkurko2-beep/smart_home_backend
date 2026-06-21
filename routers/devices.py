@@ -32,18 +32,18 @@ def create_device(device:DeviceCreate,
 
 @router.get("/")
 def get_devices(db:Session=Depends(get_db),current_user:User=Depends(get_current_user)):
-    devices = db.query(Device).filter(Device.user_id == current_user.id).all()
+    devices = db.query(Device).join(House).filter(House.user_id== current_user.id).all()
     return devices
 @router.get("/{device_id}")
 def get_device(device_id: int, db:Session=Depends(get_db),current_user:User=Depends(get_current_user)):
-    device = db.query(Device).filter(Device.id == device_id,Device.user_id == current_user.id).first()
+    device = db.query(Device).join(House).filter(House.user_id== current_user.id).first()
     if device is None:
         raise HTTPException(status_code=404, detail="Device not found")
     return device
 
 @router.put("/{device_id}")
 def update_device(device_id: int, device_data: DeviceUpdate,db:Session=Depends(get_db),current_user:User=Depends(get_current_user)):
-    device = db.query(Device).filter(Device.id == device_id,Device.user_id == current_user.id).first()
+    device = db.query(Device).join(House).filter(House.user_id== current_user.id).first()
     if device is None:
         raise HTTPException(status_code=404, detail="Device not found")
     device.name = device_data.name
@@ -55,7 +55,7 @@ def update_device(device_id: int, device_data: DeviceUpdate,db:Session=Depends(g
     return device
 @router.delete("/{device_id}")
 def delete_device(device_id: int,db:Session=Depends(get_db),current_user:User=Depends(get_current_user)):
-    device = db.query(Device).filter(Device.id == device_id,Device.user_id == current_user.id).first()
+    device = db.query(Device).join(House).filter(House.user_id== current_user.id).first()
     if device is None:
         raise HTTPException(status_code=404, detail="Device not found")
     db.delete(device)

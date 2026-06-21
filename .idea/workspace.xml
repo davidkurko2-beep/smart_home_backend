@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39917e3d-5202-4aa4-8c2d-c405cbe0dd21" name="Changes" comment="smart home 90% accuracy" />
+    <list default="true" id="39917e3d-5202-4aa4-8c2d-c405cbe0dd21" name="Changes" comment="smart home 56.22222222222222% accuracy">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/rooms.py" beforeDir="false" afterPath="$PROJECT_DIR$/routers/rooms.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -248,7 +252,23 @@
       <option name="project" value="LOCAL" />
       <updated>1782029531901</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="smart home 56.22222222222222% accuracy">
+      <option name="closed" value="true" />
+      <created>1782029740978</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1782029740978</updated>
+    </task>
+    <task id="LOCAL-00024" summary="smart home 56.22222222222222% accuracy">
+      <option name="closed" value="true" />
+      <created>1782030333512</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1782030333512</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -265,6 +285,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="backend" />
     <MESSAGE value="smart home 90% accuracy" />
-    <option name="LAST_COMMIT_MESSAGE" value="smart home 90% accuracy" />
+    <MESSAGE value="smart home 56.22222222222222% accuracy" />
+    <option name="LAST_COMMIT_MESSAGE" value="smart home 56.22222222222222% accuracy" />
   </component>
 </project>
