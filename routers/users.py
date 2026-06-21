@@ -4,6 +4,7 @@ from fastapi.params import Depends
 from fastapi import APIRouter
 from sqlalchemy.orm import Session
 
+from auth import get_current_user
 from database import get_db
 from models.user import User
 from schemas.user import UserCreate, UserUpdate
@@ -20,8 +21,8 @@ def create_user(user:UserCreate,
     db.add(db_user)
     db.commit()
     return {"message": "User crated"}
-@router.get("/")
-def get_users(db:Session=Depends(get_db)):
+@router.get("/me")
+def get_users(current_user:User=Depends(get_current_user),db:Session=Depends(get_db)):
     users = db.query(User).all()
     return users
 @router.get("/{user_id}")

@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39917e3d-5202-4aa4-8c2d-c405cbe0dd21" name="Changes" comment="smart home 90% accuracy">
-      <change afterPath="$PROJECT_DIR$/models/scenario.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/sensor_data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routers/auth_router.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/auth.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/scenario.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/sensor_data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/auth.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/auth_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/routers/auth_router.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +54,11 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Pc-9\Desktop\smart_home_backend" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -171,7 +170,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780822445573</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="smart home 90% accuracy">
+      <option name="closed" value="true" />
+      <created>1782023597005</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1782023597005</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -187,6 +194,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="backend" />
-    <option name="LAST_COMMIT_MESSAGE" value="backend" />
+    <MESSAGE value="smart home 90% accuracy" />
+    <option name="LAST_COMMIT_MESSAGE" value="smart home 90% accuracy" />
   </component>
 </project>
