@@ -6,6 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="39917e3d-5202-4aa4-8c2d-c405cbe0dd21" name="Changes" comment="smart home 90% accuracy">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/auth_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/routers/auth_router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/houses.py" beforeDir="false" afterPath="$PROJECT_DIR$/routers/houses.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/routers/users.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +197,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782025444986</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="smart home 90% accuracy">
+      <option name="closed" value="true" />
+      <created>1782026093092</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1782026093092</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

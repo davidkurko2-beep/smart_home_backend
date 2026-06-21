@@ -12,8 +12,8 @@ router=APIRouter(prefix="/houses", tags=["Houses"])
 @router.post("/")
 def create_house(house: HouseCreate,
                  db:Session=Depends(get_db),
-                 current_user:User=Depends(get_current_user())):
-    user=db.query(User).filter(User.id==house.user_id).first()
+                 current_user:User=Depends(get_current_user)):
+    user=db.query(User).filter(User.id==current_user.id).first()
     if user is None:
         raise HTTPException(status_code=404, detail="User not found")
     new_house = House(
@@ -26,19 +26,21 @@ def create_house(house: HouseCreate,
     db.refresh(new_house)
     return new_house
 @router.get("/")
-def get_houses(db:Session=Depends(get_db)):
-    houses = db.query(House).all()
+def get_houses(db:Session=Depends(get_db),current_user:User=Depends(get_current_user)):
+    houses = db.query(House).filter(House.user_id == current_user.id).all()
     return houses
 @router.get("/{house_id}")
-def get_house(house_id: int, db:Session=Depends(get_db)):
-    house = db.query(House).filter(House.id == house_id).first()
+def get_house(house_id: int, db:Session=Depends(get_db)
+              ,current_user:User=Depends(get_current_user)):
+    house = db.query(House).filter(House.id == house_id,House.user_id==current_user.id).first()
     if house is None:
         raise HTTPException(status_code=404, detail="House not found")
     return house
 
 @router.put("/{house_id}")
-def update_house(house_id: int, house_data: HouseUpdate,db:Session=Depends(get_db)):
-    house = db.query(House).filter(House.id == house_id).first()
+def update_house(house_id: int, house_data: HouseUpdate,db:Session=Depends(get_db)
+                 ,current_user:User=Depends(get_current_user)):
+    house = db.query(House).filter(House.id == house_id,House.user_id==current_user.id).first()
     if house is None:
         raise HTTPException(status_code=404, detail="House not found")
     house.name = house_data.name
@@ -47,8 +49,8 @@ def update_house(house_id: int, house_data: HouseUpdate,db:Session=Depends(get_d
     db.refresh(house)
     return house
 @router.delete("/{house_id}")
-def update_house(house_id: int,db:Session=Depends(get_db)):
-    house = db.query(House).filter(House.id == house_id).first()
+def delete_house(house_id: int,db:Session=Depends(get_db),current_user:User=Depends(get_current_user)):
+    house = db.query(House).filter(House.id == house_id,House.user_id==current_user.id).first()
     if house is None:
         raise HTTPException(status_code=404, detail="House not found")
     db.delete(house)

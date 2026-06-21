@@ -6,7 +6,7 @@ from sqlalchemy.orm import Session
 from auth import verify_password, create_access_token
 from database import get_db
 from models.user import User
-from schemas.auth import LoginData
+
 
 router = APIRouter(prefix="/auth", tags=["Auth"])
 @router.post("/login")
@@ -19,6 +19,6 @@ def login(from_data:OAuth2PasswordRequestForm=Depends(),db:Session=Depends(get_d
         raise HTTPException(status_code=404, detail="Email or password incorrect")
     token=create_access_token(data={"user_id":user.id})
     return {
-        "access_token":token,
+        "access_token": token,
         "token_type": "bearer",
     }
