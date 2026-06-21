@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39917e3d-5202-4aa4-8c2d-c405cbe0dd21" name="Changes" comment="smart home 90% accuracy" />
+    <list default="true" id="39917e3d-5202-4aa4-8c2d-c405cbe0dd21" name="Changes" comment="smart home 90% accuracy">
+      <change beforePath="$PROJECT_DIR$/models/device.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/device.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/house.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/house.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/room.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/room.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/user.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -224,7 +229,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782027924740</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="smart home 90% accuracy">
+      <option name="closed" value="true" />
+      <created>1782028256729</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1782028256729</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
