@@ -2,10 +2,12 @@ from fastapi import APIRouter, HTTPException
 from fastapi.params import Depends
 from sqlalchemy.orm import Session
 
+from auth import get_current_user
 from database import get_db
 from models.house import House
 from models.room import Room
 from models.scenario import Scenario
+from models.user import User
 from schemas.room import RoomCreate, RoomUpdate
 from schemas.scenario import ScenarioCreate, ScenarioUpdate
 
@@ -28,19 +30,19 @@ def create_scenario(scenario: ScenarioCreate,
     return new_scenario
 
 @router.get("/")
-def get_scenarios(db:Session=Depends(get_db)):
-    scenarios = db.query(Scenario).all()
+def get_scenarios(db:Session=Depends(get_db),current_user:User=Depends(get_current_user)):
+    scenarios = db.query(Scenario).filter(Scenario.user_id == current_user.id).all()
     return scenarios
 @router.get("/{scenario_id}")
-def get_scenario(scenario_id: int, db:Session=Depends(get_db)):
-    scenario = db.query(Scenario).filter(Scenario.id == scenario_id).first()
+def get_scenario(scenario_id: int, db:Session=Depends(get_db),current_user:User=Depends(get_current_user)):
+    scenario = db.query(Scenario).filter(Scenario.id == scenario_id, Scenario.user_id == current_user.id).first()
     if scenario is None:
         raise HTTPException(status_code=404, detail="Scenario not found")
     return scenario
 
 @router.put("/{scenario_id}")
-def update_scenario(scenario_id: int, scenario_data: ScenarioUpdate,db:Session=Depends(get_db)):
-    scenario = db.query(Scenario).filter(Scenario.id == scenario_id).first()
+def update_scenario(scenario_id: int, scenario_data: ScenarioUpdate,db:Session=Depends(get_db),current_user:User=Depends(get_current_user) ):
+    scenario = db.query(Scenario).filter(Scenario.id == scenario_id, Scenario.user_id == current_user.id).first()
     if scenario is None:
         raise HTTPException(status_code=404, detail="Scenario not found")
     scenario.name=scenario_data.name
@@ -60,8 +62,8 @@ def toggle_scenario(scenario_id: int, scenario_data: ScenarioUpdate,db:Session=D
     db.refresh(scenario)
     return scenario
 @router.delete("/{scenario_id}")
-def delete_scenario(scenario_id: int,db:Session=Depends(get_db)):
-    scenario = db.query(Scenario).filter(Scenario.id == scenario_id).first()
+def delete_scenario(scenario_id: int,db:Session=Depends(get_db),current_user:User=Depends(get_current_user)):
+    scenario = db.query(Scenario).filter(Scenario.id == scenario_id, Scenario.user_id == current_user.id).first()
     if scenario is None:
         raise HTTPException(status_code=404, detail="Scenario not found")
     db.delete(scenario)
