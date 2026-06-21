@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39917e3d-5202-4aa4-8c2d-c405cbe0dd21" name="Changes" comment="smart home 90% accuracy">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/auth.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routers/auth_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/routers/auth_router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routers/houses.py" beforeDir="false" afterPath="$PROJECT_DIR$/routers/houses.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routers/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/routers/users.py" afterDir="false" />
-    </list>
+    <list default="true" id="39917e3d-5202-4aa4-8c2d-c405cbe0dd21" name="Changes" comment="smart home 90% accuracy" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,6 +54,7 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Pc-9\Desktop\smart_home_backend" />
+      <recent name="C:\Users\Pc-9\Desktop\smart_home_backend\services" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -205,7 +200,31 @@
       <option name="project" value="LOCAL" />
       <updated>1782026093092</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="smart home 90% accuracy">
+      <option name="closed" value="true" />
+      <created>1782027810855</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1782027810855</updated>
+    </task>
+    <task id="LOCAL-00018" summary="smart home 90% accuracy">
+      <option name="closed" value="true" />
+      <created>1782027904211</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1782027904211</updated>
+    </task>
+    <task id="LOCAL-00019" summary="smart home 90% accuracy">
+      <option name="closed" value="true" />
+      <created>1782027924740</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1782027924740</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
