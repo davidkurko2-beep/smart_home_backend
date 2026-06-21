@@ -1,4 +1,5 @@
 from pydantic import BaseModel
+
 class DeviceCreate(BaseModel):
     name:str
     type:str
@@ -9,3 +10,6 @@ class DeviceUpdate(BaseModel):
     type:str
     status:str
     is_online:bool
+
+class DeviceStatusUpdate(BaseModel):
+    status:str
